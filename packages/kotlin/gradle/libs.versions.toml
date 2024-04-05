@@ -3,9 +3,11 @@
 
 [versions]
 junit-jupiter-engine = "5.10.1"
+mockk = "1.13.10"
 
 [libraries]
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit-jupiter-engine" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 [plugins]
 jvm = { id = "org.jetbrains.kotlin.jvm", version = "1.9.22" }
