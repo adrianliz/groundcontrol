@@ -20,4 +20,14 @@ class GroundControlShould {
 
         Assertions.assertTrue(isFeatureFlagEnabled)
     }
+
+    @Test
+    fun `return not enabled when feature flag is not enabled`() {
+        val apiClient = mockk<ApiClient>(relaxed = true)
+        val groundControl = GroundControl(apiClient)
+
+        val isFeatureFlagEnabled = groundControl.isFeatureFlagEnabled("csv-export")
+
+        Assertions.assertFalse(isFeatureFlagEnabled)
+    }
 }
