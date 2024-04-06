@@ -1,11 +1,11 @@
 package groundcontrolsh
 
 import groundcontrolsh.domain.ApiClient
-import groundcontrolsh.domain.FeatureFlag
+import groundcontrolsh.domain.CheckFeatureFlagRequest
 
 class GroundControl(private val apiClient: ApiClient) {
-    fun isFeatureFlagEnabled(flagName: String): Boolean {
-        val response = apiClient.checkStatus(FeatureFlag(flagName))
+    fun isFeatureFlagEnabled(request: CheckFeatureFlagRequest): Boolean {
+        val response = apiClient.checkStatus(request.featureFlag())
         return response.enabled
     }
 }
